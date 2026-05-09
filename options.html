@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiliconSignature Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="icons/icon48.png" alt="SS">
+        <span>SiliconSignature</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#general" class="nav-link active" data-section="general">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          General
+        </a>
+        <a href="#verification" class="nav-link" data-section="verification">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Verification
+        </a>
+        <a href="#history" class="nav-link" data-section="history">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          History
+        </a>
+        <a href="#about" class="nav-link" data-section="about">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          About
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- General Section -->
+      <section id="general" class="section active">
+        <h1 class="section-heading">General Settings</h1>
+
+        <div class="setting-card">
+          <div class="setting-header">
+            <h3 class="setting-title">Verification Overlays</h3>
+            <label class="switch">
+              <input type="checkbox" id="optOverlays">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p class="setting-desc">Show green checkmark badges on images that have a valid SiliconSignature watermark.</p>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-header">
+            <h3 class="setting-title">Auto-Scan Pages</h3>
+            <label class="switch">
+              <input type="checkbox" id="optAutoScan">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p class="setting-desc">Automatically scan images on every page you visit. Disable this to only verify images manually.</p>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-header">
+            <h3 class="setting-title">Show Notifications</h3>
+            <label class="switch">
+              <input type="checkbox" id="optNotifications">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p class="setting-desc">Display desktop notifications when a signed image is found or verified.</p>
+        </div>
+      </section>
+
+      <!-- Verification Section -->
+      <section id="verification" class="section">
+        <h1 class="section-heading">Verification Settings</h1>
+
+        <div class="setting-card">
+          <h3 class="setting-title">ASIC Bridge Endpoint</h3>
+          <p class="setting-desc">Optional: Configure a local ASIC bridge server for hardware-accelerated verification.</p>
+          <input type="text" class="text-input" id="optAsicEndpoint" placeholder="http://localhost:8888">
+          <div class="input-hint">Leave empty for local (software-only) verification.</div>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-header">
+            <h3 class="setting-title">Verify PoW Nonce</h3>
+            <label class="switch">
+              <input type="checkbox" id="optVerifyPow" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p class="setting-desc">Verify the proof-of-work nonce embedded in each signature. Provides stronger authenticity guarantees.</p>
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section id="history" class="section">
+        <h1 class="section-heading">Verification History</h1>
+
+        <div class="setting-card">
+          <div class="history-actions">
+            <button class="btn btn-secondary" id="exportHistory">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Export JSON
+            </button>
+            <button class="btn btn-secondary" id="importHistory">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              Import JSON
+            </button>
+            <button class="btn btn-danger" id="clearHistory">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              Clear All
+            </button>
+          </div>
+          <input type="file" id="importFile" accept=".json" style="display:none">
+
+          <div class="history-list" id="historyList">
+            <div class="empty-state">No verification history yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <h1 class="section-heading">About SiliconSignature</h1>
+
+        <div class="setting-card about-card">
+          <div class="about-logo">
+            <img src="icons/icon128.png" alt="SiliconSignature">
+          </div>
+          <h2 class="about-title">SiliconSignature</h2>
+          <div class="about-version">Version 1.0.0</div>
+          <p class="about-desc">
+            SiliconSignature is a decentralized image verification system that embeds
+            cryptographic signatures directly into image pixels using Reed-Solomon
+            error correction and LSB steganography.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">\ud83d\udd10</span>
+              <div>
+                <strong>Privacy First</strong>
+                <p>All verification happens locally in your browser. No image data is sent to any server.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">\u2699\ufe0f</span>
+              <div>
+                <strong>ASIC-Authenticated</strong>
+                <p>Signatures are backed by proof-of-work verified by BM1387 mining chips.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">\ud83d\udd27</span>
+              <div>
+                <strong>Error Resilient</strong>
+                <p>Reed-Solomon(32) error correction survives compression, cropping, and minor edits.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">\ud83d\udd17</span>
+              <div>
+                <strong>Interoperable</strong>
+                <p>Images signed by any platform can be verified by any other implementation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-specs">
+            <h4>Technical Specifications</h4>
+            <ul>
+              <li>GF(2^8) Reed-Solomon with primitive polynomial 0x11d</li>
+              <li>32 error correction symbols per codeword</li>
+              <li>5x payload repetition for redundancy</li>
+              <li>LSB embedding in RGB channels</li>
+              <li>SHA-256 image hashing</li>
+              <li>Proof-of-Work: double SHA-256 with difficulty target</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="save-bar" id="saveBar">
+        <span id="saveStatus"></span>
+        <button class="btn btn-primary" id="saveSettings">Save Changes</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

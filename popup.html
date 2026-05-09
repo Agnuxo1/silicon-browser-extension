@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiliconSignature</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="icons/icon48.png" alt="SS" class="logo-img">
+      <div>
+        <div class="logo-title">SiliconSignature</div>
+        <div class="logo-sub">Image Verification</div>
+      </div>
+    </div>
+    <button class="settings-btn" id="openSettings" title="Settings">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </button>
+  </div>
+
+  <div class="page-info" id="pageInfo">
+    <div class="page-title">Current Page</div>
+    <div class="page-url" id="currentUrl">Loading...</div>
+  </div>
+
+  <div class="stats-row" id="statsRow">
+    <div class="stat">
+      <div class="stat-number" id="statTotal">-</div>
+      <div class="stat-label">Images</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number stat-signed" id="statSigned">-</div>
+      <div class="stat-label">Signed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number stat-verified" id="statVerified">-</div>
+      <div class="stat-label">Verified</div>
+    </div>
+  </div>
+
+  <div class="toggle-row">
+    <label class="toggle-label">Overlays on page</label>
+    <label class="switch">
+      <input type="checkbox" id="toggleOverlays" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="section-title">Signed Images on This Page</div>
+  <div class="image-list" id="imageList">
+    <div class="empty-state">No signed images found yet. Browse a page with signed images, or use Quick Verify below.</div>
+  </div>
+
+  <div class="section-title">Quick Verify</div>
+  <div class="quick-verify">
+    <input type="text" class="url-input" id="verifyUrl" placeholder="Paste image URL...">
+    <button class="verify-btn" id="verifyBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Verify
+    </button>
+  </div>
+  <div class="verify-result" id="verifyResult"></div>
+
+  <div class="footer">
+    <span>SiliconSignature v1.0</span>
+    <span>&middot;</span>
+    <span id="privacyNote">All local</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
