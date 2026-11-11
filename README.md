@@ -2,6 +2,10 @@
 
 A browser extension that detects and verifies SiliconSignature watermarks embedded in images across the web. All verification happens locally in your browser -- no image data is ever sent to external servers.
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> The browser extension brings watermark extraction and checking to the page where an image is viewed, reducing the need to download files and move them through a separate verifier. Local processing keeps the documented verification workflow independent of an image-upload service. The <a href="#privacy">privacy and processing design</a> supports convenient inspection; a recovered watermark alone does not prove the depicted event or creator identity.</sub>
+<!-- impact-note:end -->
+
 ## Features
 
 - **Right-click any image** and select "Verify with SiliconSignature" to instantly check for an embedded cryptographic signature
